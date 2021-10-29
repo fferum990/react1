@@ -15,9 +15,13 @@ export default class Hello extends Component{
         console.log("ComponentDidMount")
     }
 
+    renderListItem({item,index}){
+        return <div key={`${item.title}`}>{item.title}</div>
+    }
     renderLists(){
         return this.state.list.map((item,index)=>{
-            return <div key={`${item.title}${index}`}>{item.title}</div>
+            return this.renderListItem({item,index});
+            
         });
     }
 
