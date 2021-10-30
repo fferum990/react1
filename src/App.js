@@ -1,14 +1,32 @@
-import './App.css';
-import Hello from './Hello.js'
-import Buy from './Buy.js'
-
+import { useState } from 'react'
+import List from './List.js'
+import Form_list from './Form_list'
 function App() {
+  const [lists,setList] = useState([])
+
+  const addList = () =>{
+
+  }
+  const removeList = () =>{
+
+  }
+  const handleToggle = () =>{
+
+  }
+  
   return (
+   
     <div className="App">
-      <header className="App-header">
-        <Buy parent_color={"black"}/>
-        <Hello parent_color={"black"}/>
+      <header>
+        <h1>Колличество элеметнов списка: {lists.length}</h1>
       </header>
+      <Form_list />
+      {lists.map((list) => {
+        return (
+          <List
+          key={list.id} />
+        )
+      })}
     </div>
   );
 }
