@@ -32,7 +32,7 @@ function App() {
       <header>
         <h1>Колличество элеметнов списка: {lists.length}</h1>
       </header>
-      <Form_list addList={addList}/>
+      <Form_list addList={addList} />
       {lists.map((list) => {
         return (
           <List
