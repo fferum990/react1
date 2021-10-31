@@ -1,17 +1,21 @@
-import { useState} from 'react'
-function Form_list(){
+import { useState } from 'react'
+function Form_list({ addList }){
     const [userInput, setUserInput] = useState('')
     
-    const handleSumbit = ( ) => {
-
+    const handleSumbit = (e) => {
+        e.preventDefault()
+        addList(userInput)
+        setUserInput("")
     }
 
-    const EnterPress = () => {
-
+    const EnterPress = (e) => {
+        if(e.key === "Enter") {
+            handleSumbit(e)
+        }
     }
 
-    const handleChange = () => {
-     
+    const handleChange = (e) => {
+        setUserInput(e.currentTarget.value)
     }
 
     return (
